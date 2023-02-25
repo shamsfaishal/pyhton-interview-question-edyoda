@@ -1,0 +1,318 @@
+Q1. What are functions in Python?
+Ans: A function is a block of code which is executed only when it is called. To define a Python function, the def keyword is used.
+
+Example:
+def Newfunc():
+print("Hi, Welcome to Edyoda")
+Newfunc(); #calling the function
+Output: Hi, Welcome to Edyoda
+
+Q2.How Would You Generate Random Numbers in Python?
+To generate random numbers in Python, you must first import the random module. 
+
+The random() function generates a random float value between 0 & 1.
+
+> random.random()
+
+The randrange() function generates a random number within a given range.
+
+Syntax: randrange(beginning, end, step)
+
+Example - > random.randrange(1,10,2)
+
+Q3.What Does the // Operator Do?
+In Python, the / operator performs division and returns the quotient in the float.
+
+For example: 5 / 2 returns 2.5
+
+The // operator, on the other hand, returns the quotient in integer.
+
+For example: 5 // 2 returns 2
+
+Q4.What Does the ‘is’ Operator Do?
+The ‘is’ operator compares the id of the two objects. 
+
+list1=[1,2,3]
+
+list2=[1,2,3]
+
+list3=list1
+
+list1 == list2 🡪 True
+
+list1 is list2 🡪 False
+
+list1 is list3 🡪 True
+
+Q5.What Is the Purpose of the Pass Statement?
+The pass statement is used when there's a syntactic but not an operational requirement. For example - The program below prints a string ignoring the spaces.
+
+var="Si mplilea rn"
+
+for i in var:
+
+  if i==" ":
+
+    pass
+
+  else:
+
+    print(i,end="")
+
+Here, the pass statement refers to ‘no action required.’
+
+Q6.How Will You Check If All the Characters in a String Are Alphanumeric?
+Python has an inbuilt method isalnum() which returns true if all characters in the string are alphanumeric. 
+
+Example - 
+
+>> "abcd123".isalnum()
+
+Output: True
+
+>>”abcd@123#”.isalnum()
+
+Output: False
+
+Another way is to use regex as shown.
+
+>>import re
+
+>>bool(re.match(‘[A-Za-z0-9]+$','abcd123’))
+
+Output: True
+
+>> bool(re.match(‘[A-Za-z0-9]+$','abcd@123’))
+
+Output: False
+
+
+
+Q7. What are Pickling and Unpickling?
+Pickling 
+
+Unpickling 
+
+Converting a Python object hierarchy to a byte stream is called pickling
+Pickling is also referred to as serialization
+Converting a byte stream to a Python object hierarchy is called unpickling
+Unpickling is also referred to as deserialization 
+If you just created a neural network model, you can save that model to your hard drive, pickle it, and then unpickle to bring it back into another software program or to use it at a later time.
+
+The following are some of the most frequently asked Python interview questions
+
+
+
+Python Function
+
+
+
+
+ 
+
+
+
+Q9. Differentiate Between append() and extend().
+append()
+
+extend()
+
+append() adds an element to the end of the list
+Example - 
+>>lst=[1,2,3]
+
+>>lst.append(4)
+
+>>lst
+
+Output:[1,2,3,4]
+
+extend() adds elements from an iterable to the end of the list
+Example - 
+>>lst=[1,2,3]
+
+>>lst.extend([4,5,6])
+
+>>lst
+
+Output:[1,2,3,4,5,6]
+
+
+
+Q10. What Is the Difference Between a List and a Tuple?
+Lists are mutable while tuples are immutable.
+
+Example:
+
+List 
+
+>>lst = [1,2,3]
+
+>>lst[2] = 4
+
+>>lst
+
+Output:[1,2,4]
+
+Tuple 
+
+>>tpl = (1,2,3)
+
+>>tpl[2] = 4
+
+>>tpl
+
+Output:TypeError: 'tuple'
+
+the object does not support item
+
+assignment
+
+There is an error because you can't change the tuple 1 2 3 into 1 2 4. You have to completely reassign tuple to a new value.
+
+
+
+
+Q11. How Do You Use the Split() Function in Python?
+The split() function splits a string into a number of strings based on a specific delimiter. 
+
+Syntax - 
+
+string.split(delimiter, max)
+
+Where:
+
+the delimiter is the character based on which the string is split. By default it is space. 
+
+max is the maximum number of splits 
+
+Example - 
+
+>>var=“Red,Blue,Green,Orange”
+
+>>lst=var.split(“,”,2)
+
+>>print(lst)
+
+Output:
+
+[‘Red’,’Blue’,’Green, Orange’]
+
+
+Q12. Write a Function Prototype That Takes a Variable Number of Arguments.
+The function prototype is as follows:
+
+def function_name(*list)
+
+>>def fun(*var):
+
+>> for i in var:
+
+print(i)
+
+>>fun(1)
+
+>>fun(1,25,6)
+
+In the above code, * indicates that there are multiple arguments of a variable.
+
+
+Q13.write a program to print fibonaccii sequence upto 10 no.
+
+ans.num1, num2 = 0, 1
+
+print("Fibonacci sequence:")
+# run loop 10 times
+for i in range(10):
+    # print next number of a series
+    print(num1, end="  ")
+    # add last two numbers to get next number
+    res = num1 + num2
+
+    # update values
+    num1 = num2
+    num2 = res
+
+
+Q14. Write a program in Python to check if a number is prime.
+
+a=int(input("enter number"))
+if a=1:
+   for x in range(2,a):
+         if(a%x)==0:
+          print("not prime")
+   break
+   else:
+      print("Prime")
+else:
+   print("not prime")
+Output:
+
+enter number 3
+
+Prime
+
+Q15. Write a program in Python to check if a sequence is a Palindrome.
+
+a=input("enter sequence")
+b=a[::-1]
+if a==b:
+  print("palindrome")
+else:
+  print("Not a Palindrome")
+
+q16. What is the order of precedence in python?
+a) Exponential, Parentheses, Multiplication, Division, Addition, Subtraction
+b) Exponential, Parentheses, Division, Multiplication, Addition, Subtraction
+c) Parentheses, Exponential, Multiplication, Division, Subtraction, Addition
+d) Parentheses, Exponential, Multiplication, Division, Addition, Subtraction
+
+Answer: d
+Explanation: For order of precedence, just remember this PEMDAS (similar to BODMAS).
+
+Q17 What will be the output of the following Python code?
+
+x = 'abcd'
+for i in x:
+    print(i.upper())
+a) a B C D
+b) a b c d
+c) error
+d) A B C D
+View Ans
+
+Answer: d
+Explanation: The instance of the string returned by upper() is being print
+
+Q18. Which function is called when the following Python program is executed?
+
+f = foo()
+format(f)
+a) str()
+b) format()
+c) __str__()
+d) __format__()
+View Answer
+
+Answer: c
+Explanation: Both str(f) and format(f) call f.__str__().
+Q19. Which one of the following is not a keyword in Python language?
+a) pass
+b) eval
+c) assert
+d) nonlocal
+View Answer
+
+Answer: b
+Explanation: eval can be used as a variable.
+
+
+Q20. What arithmetic operators cannot be used with strings in Python?
+a) *
+b) –
+c) +
+d) All of the mentioned
+View Answer
+
+Answer: b
+Explanation: + is used to concatenate and * is used to multiply strings. 
